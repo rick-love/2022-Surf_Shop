@@ -26,3 +26,4 @@ Create Header, Footer components
 
 Create Product Component, HomeScreen
 Updating Master and Main
+Deleted Main Branch
