@@ -1,5 +1,6 @@
 import React from 'react'
 import Rating from './Rating'
+import { Link } from 'react-router-dom'
 
 const Product = ({ product }) => {
   return (
@@ -13,12 +14,12 @@ const Product = ({ product }) => {
           />
         </div>
         <div className='p-8 bg-slate-100'>
-          <a
-            href={product._id}
+          <Link
+            to={`/product/${product._id}`}
             className='uppercase tracking-wide text-sm text-indigo-500 font-semibold hover:underline'
           >
             {product.name}
-          </a>
+          </Link>
           <div className='block mt-1 text-lg leading-tight font-medium text-black'>
               <span>€ {product.price}</span>
           </div>
