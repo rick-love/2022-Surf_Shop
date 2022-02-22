@@ -55,7 +55,14 @@ Root/package.json
     "dev": "concurrently \"npm run server\" \"npm run client\""
     },
 
-Create .env file in root
+Add .env file, Mongoose, Colors
+Connect to Database
+Add Mongoose Models
+Created database seeder:
+npm run data:import
+npm run data:destroy -d
+
+
 
 
 npm run dev ( to run both front and backend)

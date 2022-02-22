@@ -1,10 +1,8 @@
 const products = [
   {
-    _id: '1',
     name: 'Damen Body Suit',
     image: '/images/damen_bodysuit.jpeg',
-    description:
-      'Body Glove Paddlesuit Stand Up Badeanzug',
+    description: 'Body Glove Paddlesuit Stand Up Badeanzug',
     brand: 'Body Glove',
     category: 'Clothing',
     price: 83.76,
@@ -13,7 +11,6 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '2',
     name: 'Hydro Flask',
     image: '/images/hydro_flask.jpeg',
     description:
@@ -26,11 +23,9 @@ const products = [
     numReviews: 8,
   },
   {
-    _id: '3',
     name: 'SUP',
     image: '/images/sup.jpeg',
-    description:
-      'STX Isup Freeride SUP Board. STX Isup Freeride',
+    description: 'STX Isup Freeride SUP Board. STX Isup Freeride',
     brand: 'STX',
     category: 'Water Sports',
     price: 629.99,
@@ -39,11 +34,9 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '4',
     name: 'Santa Cruz Skateboard',
     image: '/images/sc_skateboard.jpeg',
-    description:
-      'Santa Cruz Classic Dot Super Micro Kinder Skateboard',
+    description: 'Santa Cruz Classic Dot Super Micro Kinder Skateboard',
     brand: 'Santa Cruz',
     category: 'Street Sports',
     price: 89.99,
@@ -52,11 +45,9 @@ const products = [
     numReviews: 12,
   },
   {
-    _id: '5',
     name: 'Lost Surfboard',
     image: '/images/lost_surfboard.jpeg',
-    description:
-      'Lost Hydra Futures 5 Fin Surfboard',
+    description: 'Lost Hydra Futures 5 Fin Surfboard',
     brand: 'Lost',
     category: 'Water Sports',
     price: 749.99,
@@ -65,11 +56,9 @@ const products = [
     numReviews: 10,
   },
   {
-    _id: '6',
     name: 'Lost sub Driver Surfboard',
     image: '/images/lost_board.jpeg',
-    description:
-      'Lost Sub Driver 2.0 FCS II Thruster Surfboard',
+    description: 'Lost Sub Driver 2.0 FCS II Thruster Surfboard',
     brand: 'Lost',
     category: 'Water Sports',
     price: 629.99,
