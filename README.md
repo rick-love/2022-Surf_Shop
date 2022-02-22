@@ -10,6 +10,7 @@ App.css, App.test.js, logo.svg, setupTest.js
 
 Remove all code from index.css
 Update App.js:
+
 - convert to an arrow function and an empty fragment
 - Show hidden files and folders: ls -a
 - We want the Git Repository in the Root folder not the front-end
@@ -17,13 +18,45 @@ Update App.js:
 - Move Git Ignore into the Root
 
 # Import Tailwind CSS and dependencies ()
+
 - npm install @heroicons/react or just use SVG is a better option
 - npm install @headlessui/react
 
 Create Header, Footer components
+
 - create NavBar
 - simple footer
 
 Create Product Component, HomeScreen
-Updating Master and Main
-Deleted Main Branch
+
+Create Backend folder in root. Then npm init in ROOT folder to create package.json
+Root - npm i express
+Backend
+
+- create data folder and copy products.js
+- create Express Server
+- Update products.js (module.exports = products)
+
+HomeScreen
+
+- UseState, useEffect Hook Added
+
+frontend/package.JSON
+
+- Add Proxy:
+
+Adding Nodemon and Concurrently, DOTENV to Root
+npm i -D nodemon concurrently (Dev Dependencies)
+Root/package.json
+    "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+
+Create .env file in root
+
+
+npm run dev ( to run both front and backend)
+npm run server (Backend only)
