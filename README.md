@@ -67,6 +67,12 @@ Create Routes for Database
 Root Folder:
 npm install --save express-async-handler
 
+Create Error Middleware
+
+Adding Redux for State Management to frontend folder
+npm i react-redux redux-thunk redux redux-devtools-extension
+src/store.js
+
 
 
 npm run dev ( to run both front and backend)
