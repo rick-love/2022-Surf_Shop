@@ -59,9 +59,13 @@ Add .env file, Mongoose, Colors
 Connect to Database
 Add Mongoose Models
 Created database seeder:
-npm run data:import
-npm run data:destroy -d
+- npm run data:import
+- npm run data:destroy -d
 
+Create Routes for Database
+
+Root Folder:
+npm install --save express-async-handler
 
 
 
