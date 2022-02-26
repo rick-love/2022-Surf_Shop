@@ -73,6 +73,7 @@ Adding Redux for State Management to frontend folder
 npm i react-redux redux-thunk redux redux-devtools-extension
 src/store.js
 
+Action -> Reducer -> Component
 
 
 npm run dev ( to run both front and backend)

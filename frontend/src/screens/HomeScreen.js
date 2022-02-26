@@ -1,32 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Product from '../components/Product'
-import axios from 'axios'
-
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
-  const [products, setProducts] = useState([])
+  const dispatch = useDispatch()
+
+  const productList = useSelector((state) => state.productList)
+  const { loading, error, products } = productList
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const { data } = await axios.get('/api/products')
-
-      setProducts(data)
-    }
-    fetchProducts()
-  }, [])
+    dispatch(listProducts())
+  }, [dispatch])
 
   return (
     <div className='container'>
       <h1>Latest Items</h1>
-
-      <div className='grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-start mx-3'>
-        {/* <div className='flex flex-wrap gap-4'> */}
-        {products.map((product) => (
-          <div key={product._id} className='flex max-w-xl'>
-            <Product product={product} />
-          </div>
-        ))}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message>{error}</Message>
+      ) : (
+        <div className='grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-start mx-3'>
+          {/* <div className='flex flex-wrap gap-4'> */}
+          {products.map((product) => (
+            <div key={product._id} className='flex max-w-xl'>
+              <Product product={product} />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
