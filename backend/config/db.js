@@ -9,6 +9,7 @@ const connectDB = async () => {
     console.error(err.message, 'Error connecting to Database'.red.inverse)
     process.exit(1)
   }
+  
 }
 
 export default connectDB
