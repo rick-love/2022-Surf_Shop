@@ -78,3 +78,19 @@ Action -> Reducer -> Component
 
 npm run dev ( to run both front and backend)
 npm run server (Backend only)
+
+Added Material UI for Styling.
+
+- Creating the Add to Cart functionality:
+Create a Submit Handler - onClick to Fab and call submit handler
+
+- Create Reducer and Action
+Add constants/cartConstant.js
+Add reducers/cartReducers.js
+Add cartReducer to store.js
+Add action/cartActions.js
+
+
+
+
+

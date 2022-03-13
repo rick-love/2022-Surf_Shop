@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
@@ -19,11 +19,19 @@ import {
   Typography,
 } from '@mui/material'
 
-import { listProductDetails } from '../actions/productActions'
-import themeOptions from "../assets/theme";
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
 
+import { listProductDetails } from '../actions/productActions'
+import themeOptions from '../assets/theme'
 
 const ProductScreen = () => {
+  const [qty, setQty] = useState(1)
+
+  let navigate = useNavigate()
+
   const params = useParams()
   const dispatch = useDispatch()
   const productDetails = useSelector((state) => state.productDetails)
@@ -32,6 +40,10 @@ const ProductScreen = () => {
   useEffect(() => {
     dispatch(listProductDetails(params.id))
   }, [dispatch, params])
+
+  const addToCartHandler = () => {
+    navigate(`/cart/${params.id}?qty=${qty}`)
+  }
 
   return (
     <ThemeProvider theme={themeOptions}>
@@ -51,7 +63,7 @@ const ProductScreen = () => {
                 <Typography gutterBottom variant='h2' component='div'>
                   {product.name}
                 </Typography>
-                <Typography gutterBottom color='orange'>
+                <Typography gutterBottom color='#2607dc'>
                   <Rating
                     value={product.rating}
                     text={`${product.numReviews} reviews`}
@@ -64,6 +76,7 @@ const ProductScreen = () => {
                   {product.price}
                 </Typography>
               </CardContent>
+
               <Box>
                 <Stack
                   sx={{
@@ -74,12 +87,30 @@ const ProductScreen = () => {
                   divider={<Divider orientation='horizontal' flexItem />}
                 >
                   <ListItem>In Stock: {product.countInStock}</ListItem>
+                  {/* QTY in Stock Select */}
                   <ListItem>
-                    <Fab variant='extended'>
-                      <Link to='/'>Add to Cart</Link>
+                    {product.countInStock > 0 && (
+                      <FormControl variant='standard' fullWidth>
+                        <InputLabel id='qty-label'>Qty</InputLabel>
+                        <Select
+                          value={qty}
+                          onChange={(e) => setQty(e.target.value)}
+                        >
+                          {[...Array(product.countInStock).keys()].map((x) => (
+                            <MenuItem key={x + 1} value={x + 1}>
+                              {x + 1}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    )}
+                  </ListItem>
+
+                  <ListItem>
+                    <Fab variant='extended' onClick={addToCartHandler}>
+                      Add to Cart
                     </Fab>
                   </ListItem>
-                  <ListItem>ListItem 3</ListItem>
                 </Stack>
               </Box>
             </Box>
