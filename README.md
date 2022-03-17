@@ -90,6 +90,19 @@ Add reducers/cartReducers.js
 Add cartReducer to store.js
 Add action/cartActions.js
 
+- Adding Controllers to handle functionality
+- /backend/controllers/productController
+
+- Adding User Authentication
+- - Create User Controller
+- - getUser function + Add Folder to Postman for User Auth
+
+- Front End User Authentication & 
+- - Create User Constants
+- - Create Reducers
+- - Import into Store.js
+- - Create User Action
+
 
 
 
