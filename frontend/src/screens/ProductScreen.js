@@ -48,7 +48,7 @@ const ProductScreen = () => {
   return (
     <ThemeProvider theme={themeOptions}>
       <Container>
-        <Fab variant='extended'>
+        <Fab className='back-btn' variant='extended'>
           <Link to='/'>Go Back</Link>
         </Fab>
 
@@ -119,7 +119,7 @@ const ProductScreen = () => {
               height='140'
               image={product.image}
               alt='product'
-            />
+        />    
           </Card>
         )}
       </Container>

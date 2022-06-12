@@ -3,11 +3,7 @@ import React from 'react'
 
 const FormContainer = ({ children }) => {
   return (
-    <Container
-      sx={{
-        justifyContent: 'center',
-      }}
-    >
+    <Container>
       {/* Row / Column / 'justify content md center */}
       {children}
     </Container>
